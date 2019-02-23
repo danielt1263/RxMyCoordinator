@@ -1,0 +1,36 @@
+PODS:
+  - RxAtomic (4.4.1)
+  - RxCocoa (4.4.1):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.1):
+    - RxAtomic (~> 4.4)
+  - RxSwiftExt (3.4.0):
+    - RxSwiftExt/Core (= 3.4.0)
+    - RxSwiftExt/RxCocoa (= 3.4.0)
+  - RxSwiftExt/Core (3.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwiftExt/RxCocoa (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwiftExt/Core
+
+DEPENDENCIES:
+  - RxCocoa
+  - RxSwift
+  - RxSwiftExt
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+    - RxSwiftExt
+
+SPEC CHECKSUMS:
+  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
+  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
+  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+
+PODFILE CHECKSUM: 1962423e0c7a62fa6676644b9177bcef125282a8
+
+COCOAPODS: 1.5.3

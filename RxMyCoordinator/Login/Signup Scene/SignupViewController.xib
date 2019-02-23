@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController" customModule="RxMyCoordinator" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="M6f-Gp-1Cc" id="gDU-b4-ldR"/>
+                <outlet property="firstNameTextField" destination="m9X-It-SWM" id="zJQ-h6-eeU"/>
+                <outlet property="lastNameTextField" destination="HpJ-F2-O4v" id="8xb-Dj-vzl"/>
+                <outlet property="passwordTextField" destination="G8t-1V-Tm3" id="6iA-So-6MI"/>
+                <outlet property="signupButton" destination="0Im-Pj-08y" id="OQ8-3p-pMM"/>
+                <outlet property="view" destination="ZrJ-Ky-QqN" id="ndE-jw-Ilp"/>
+            </connections>
+        </placeholder>
+        <view contentMode="scaleToFill" id="ZrJ-Ky-QqN">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jjg-Wl-hsd">
+                    <rect key="frame" x="16" y="76" width="343" height="182"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m9X-It-SWM" userLabel="First Name Text Field">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" textContentType="given-name"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpJ-F2-O4v" userLabel="Last Name Text Field">
+                            <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" textContentType="family-name"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-Gp-1Cc">
+                            <rect key="frame" x="0.0" y="76" width="343" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G8t-1V-Tm3">
+                            <rect key="frame" x="0.0" y="114" width="343" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES" textContentType="password"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Im-Pj-08y">
+                            <rect key="frame" x="0.0" y="152" width="343" height="30"/>
+                            <state key="normal" title="Sign Up"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jjg-Wl-hsd" firstAttribute="leading" secondItem="ZrJ-Ky-QqN" secondAttribute="leadingMargin" id="5C0-Fi-3Vk"/>
+                <constraint firstItem="Jjg-Wl-hsd" firstAttribute="top" secondItem="S8a-Jp-Bj7" secondAttribute="top" constant="56" id="LDo-ch-aLk"/>
+                <constraint firstAttribute="trailingMargin" secondItem="Jjg-Wl-hsd" secondAttribute="trailing" id="aFj-De-Rba"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="S8a-Jp-Bj7"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+</document>

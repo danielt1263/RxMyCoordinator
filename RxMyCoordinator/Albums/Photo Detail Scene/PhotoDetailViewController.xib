@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController" customModule="RxMyCoordinator" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicatorView" destination="EL2-mK-opc" id="YTo-XZ-bct"/>
+                <outlet property="imageView" destination="GHx-ed-33W" id="lUt-cw-Vo9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GHx-ed-33W">
+                    <rect key="frame" x="0.0" y="156" width="375" height="375"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="GHx-ed-33W" secondAttribute="height" multiplier="1:1" id="Pjk-xF-TlT"/>
+                    </constraints>
+                </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EL2-mK-opc">
+                    <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GHx-ed-33W" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" priority="750" id="22E-qj-1cf"/>
+                <constraint firstItem="GHx-ed-33W" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" priority="750" id="7qy-fd-UV2"/>
+                <constraint firstItem="EL2-mK-opc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9Rm-v9-KXB"/>
+                <constraint firstItem="GHx-ed-33W" firstAttribute="width" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="width" id="EzV-Ag-Acp"/>
+                <constraint firstItem="EL2-mK-opc" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-10" id="XdL-lV-eOX"/>
+                <constraint firstItem="GHx-ed-33W" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="bfH-0f-Tei"/>
+                <constraint firstItem="GHx-ed-33W" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="cUG-rc-HIA"/>
+                <constraint firstItem="GHx-ed-33W" firstAttribute="height" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="height" id="slD-DA-wOi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
