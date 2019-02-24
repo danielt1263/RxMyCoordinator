@@ -1,7 +1,7 @@
 # RxMyCoordinator
 An example showing how to handle complex coordination using RxSwift.
 
-There are a lot of IMHO rather complex coordination systems around that use RxSwift and I have been asked to provide an example of my own.
+There are a lot of IMHO rather complex coordination systems around that use RxSwift and I have been asked to provide an example of my own. I have what I think is a simpler way to go about it
 
 ## Notes
 * You don't need a coordinator object for every view controller. If a view controller has a view model, then it doesn't need a coordinator. You only need coordinators for view controllers that _don't_ have view models. Generally, this means Split, Tab, and Navigation controllers, but you could also use a coordinator for custom containers.
