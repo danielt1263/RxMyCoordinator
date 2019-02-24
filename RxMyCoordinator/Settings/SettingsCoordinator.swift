@@ -22,7 +22,7 @@ func settingsCoordinator(root: UIViewController, user: Observable<User>) {
 
 	settings.title = "Settings"
 
-	let flow = action.settingsFlow(dismiss: { root.rxDismiss(animated: false) })
+	let flow = action.flow(dismiss: { root.rxDismiss(animated: false) })
 
 	_ = flow.dismiss
 		.subscribe(onNext: {

@@ -13,8 +13,8 @@ struct SettingsFlow {
 	let eraseUser: Observable<Void>
 }
 
-extension Observable where Element == SettingsAction {
-	func settingsFlow(dismiss: @escaping () -> Observable<Void>) -> SettingsFlow {
+extension ObservableType where E == SettingsAction {
+	func flow(dismiss: @escaping () -> Observable<Void>) -> SettingsFlow {
 		return SettingsFlow(
 			dismiss: self
 				.filter { $0 == .done }
