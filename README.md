@@ -6,7 +6,7 @@ There are a lot of IMHO rather complex coordination systems around that use RxSw
 ## Notes
 * You don't need a coordinator object for every view controller. If a view controller has a view model, then it doesn't need a coordinator. You only need coordinators for view controllers that _don't_ have view models. Generally, this means Split, Tab, and Navigation controllers, but you could also use a coordinator for custom containers.
 
-* Actually, you don't need a coordinator _object_ at all. You will see in this code I don't have any Coordinator classes or struct. Instead I simply have a function that does work.
+* Actually, you don't need a coordinator _object_ at all. You will see in this code I don't have any Coordinator classes or structs. Instead I simply have a function that does work.
 
 * Testability comes with `flow`s. You will see that (almost) every coordinator has an associated flow function. Flows are to Coordinators as ViewModels are to ViewControllers. By placing the logic in a seperate function from the effects, you have a simple way to unit test your logic. This is good architecture 101. You will probably notice that I don't have a flow for all coordinators. Sometimes all the logic is in the View Models so there is nothing left for the coordinator apart from effects.
 
