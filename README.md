@@ -10,7 +10,7 @@ There are a lot of IMHO rather complex coordination systems around that use RxSw
 
 * Testability comes with `flow`s. You will see that (almost) every coordinator has an associated flow function. Flows are to Coordinators as ViewModels are to ViewControllers. By placing the logic in a seperate function from the effects, you have a simple way to unit test your logic. This is good architecture 101. You will probably notice that I don't have a flow for all coordinators. Sometimes all the logic is in the View Models so there is nothing left for the coordinator apart from effects.
 
-* There are lots of different ways to make flows. You will see that some flows are extensions on `ObservableType` and some are function, some return an Observable containing an `enum` while others return a Flow `struct`. This is to show the various ways to make flows.
+* There are lots of different ways to make flows. You will see that some flows are extensions on `ObservableType` and others are free functions, some return an Observable containing an `enum` while others return a Flow `struct`. This is to show the various ways to make flows.
 
 * View Controllers know nothing about the hierarchy. Notice that view controllers have no idea how they are presented, nor do they even know which buttons will cause a transition. If you need to re-arrange or remove a view controller from a particluar presentation chain, you only need to go into the flow function and possibly the coordinator. You don't have to touch a bunch of view controllers.
 
