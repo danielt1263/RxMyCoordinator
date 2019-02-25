@@ -21,7 +21,6 @@
 		09E7F546221DD37D00E69E9F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7F545221DD37D00E69E9F /* ProfileCoordinator.swift */; };
 		09E7F54A221DDD2E00E69E9F /* SettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E7F549221DDD2E00E69E9F /* SettingsView.storyboard */; };
 		09E7F54C221DE59B00E69E9F /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7F54B221DE59B00E69E9F /* SettingsCoordinator.swift */; };
-		09F9904C2220458E00DB5B3E /* Disposable+insert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9904B2220458E00DB5B3E /* Disposable+insert.swift */; };
 		09F9904E2220971200DB5B3E /* HasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9904D2220971200DB5B3E /* HasViewModel.swift */; };
 		09F990532220A6A500DB5B3E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F990522220A6A500DB5B3E /* Result.swift */; };
 		727CD459221E2D34009CB574 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CD458221E2D34009CB574 /* SettingsViewModel.swift */; };
@@ -96,7 +95,6 @@
 		09E7F545221DD37D00E69E9F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		09E7F549221DDD2E00E69E9F /* SettingsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsView.storyboard; sourceTree = "<group>"; };
 		09E7F54B221DE59B00E69E9F /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
-		09F9904B2220458E00DB5B3E /* Disposable+insert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disposable+insert.swift"; sourceTree = "<group>"; };
 		09F9904D2220971200DB5B3E /* HasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasViewModel.swift; sourceTree = "<group>"; };
 		09F990522220A6A500DB5B3E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5944BF2FD92C46F048423598 /* Pods-RxMyCoordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMyCoordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxMyCoordinator/Pods-RxMyCoordinator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				72DCB9182217BB2A00C3F4D9 /* ActivityIndicator.swift */,
-				09F9904B2220458E00DB5B3E /* Disposable+insert.swift */,
 				09F9904D2220971200DB5B3E /* HasViewModel.swift */,
 				72DCB9172217BB2A00C3F4D9 /* NetworkRequest.swift */,
 				72DCB91B2217BC4800C3F4D9 /* AsVoid.swift */,
@@ -556,7 +553,6 @@
 				727CD45B221E32D3009CB574 /* ProfileViewModel.swift in Sources */,
 				72DCB9222217D30E00C3F4D9 /* PostTableViewModel.swift in Sources */,
 				728192E4221A31C40052D9C8 /* LoginViewController.swift in Sources */,
-				09F9904C2220458E00DB5B3E /* Disposable+insert.swift in Sources */,
 				72FDF94E22199B6500397F9F /* PostsCoordinator.swift in Sources */,
 				728192EA221A37AF0052D9C8 /* LoginViewModel.swift in Sources */,
 				72FDF94222191CB800397F9F /* PhotoCollectionViewCell.swift in Sources */,

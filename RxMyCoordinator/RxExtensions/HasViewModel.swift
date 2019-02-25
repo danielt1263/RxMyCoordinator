@@ -20,9 +20,7 @@ extension HasViewModel {
 			let disposable = CompositeDisposable()
 			self?.viewModelFactory = { inputs in
 				let vm = outputFactory(inputs)
-				_ = vm.1
-					.bind(to: observer)
-					.insert(into: disposable)
+				_ = disposable.insert(vm.1.bind(to: observer))
 				return vm.0
 			}
 
