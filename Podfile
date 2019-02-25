@@ -12,15 +12,6 @@ target 'RxMyCoordinator' do
 
 end
 
-target 'RxFlow' do
-	use_frameworks!
-	inhibit_all_warnings!
-
-	pod 'RxCocoa'
-	pod 'RxSwift'
-
-end
-
 post_install do |installer|
 	installer.pods_project.targets.each do |target|
 		if target.name == 'RxSwift'
