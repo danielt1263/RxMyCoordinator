@@ -19,7 +19,7 @@ func todoCoordinator(root: UINavigationController) {
 			case .success(let todo):
 				print("Selected: \(todo)")
 			case .error(let error):
-				displayAlert(title: "Error", message: error.localizedDescription)
+				presentAlert(title: "Error", message: error.localizedDescription)
 			}
 		})
 }

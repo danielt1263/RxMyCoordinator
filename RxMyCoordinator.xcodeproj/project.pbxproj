@@ -23,7 +23,6 @@
 		09E7F54C221DE59B00E69E9F /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7F54B221DE59B00E69E9F /* SettingsCoordinator.swift */; };
 		09F9904C2220458E00DB5B3E /* Disposable+insert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9904B2220458E00DB5B3E /* Disposable+insert.swift */; };
 		09F9904E2220971200DB5B3E /* HasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9904D2220971200DB5B3E /* HasViewModel.swift */; };
-		09F99051222098B500DB5B3E /* ViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F99050222098B500DB5B3E /* ViewStack.swift */; };
 		09F990532220A6A500DB5B3E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F990522220A6A500DB5B3E /* Result.swift */; };
 		727CD459221E2D34009CB574 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CD458221E2D34009CB574 /* SettingsViewModel.swift */; };
 		727CD45B221E32D3009CB574 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CD45A221E32D3009CB574 /* ProfileViewModel.swift */; };
@@ -31,6 +30,7 @@
 		728192E5221A31C40052D9C8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728192E3221A31C40052D9C8 /* LoginViewController.xib */; };
 		728192E8221A35450052D9C8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728192E7221A35450052D9C8 /* LoginCoordinator.swift */; };
 		728192EA221A37AF0052D9C8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728192E9221A37AF0052D9C8 /* LoginViewModel.swift */; };
+		7294BC21222351020016C047 /* UIViewController+top.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7294BC20222351020016C047 /* UIViewController+top.swift */; };
 		729F39AF222190D10090B5E4 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F39AE222190D10090B5E4 /* LoginFlow.swift */; };
 		729F39B12221B4F00090B5E4 /* AlbumsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F39B02221B4F00090B5E4 /* AlbumsFlow.swift */; };
 		729F39B3222206090090B5E4 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F39B2222206090090B5E4 /* SettingsFlow.swift */; };
@@ -98,7 +98,6 @@
 		09E7F54B221DE59B00E69E9F /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		09F9904B2220458E00DB5B3E /* Disposable+insert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disposable+insert.swift"; sourceTree = "<group>"; };
 		09F9904D2220971200DB5B3E /* HasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasViewModel.swift; sourceTree = "<group>"; };
-		09F99050222098B500DB5B3E /* ViewStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStack.swift; sourceTree = "<group>"; };
 		09F990522220A6A500DB5B3E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		38C055AE3EC38C497B076DA8 /* Pods-RxFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxFlow/Pods-RxFlow.release.xcconfig"; sourceTree = "<group>"; };
 		5944BF2FD92C46F048423598 /* Pods-RxMyCoordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMyCoordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxMyCoordinator/Pods-RxMyCoordinator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		728192E3221A31C40052D9C8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		728192E7221A35450052D9C8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		728192E9221A37AF0052D9C8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7294BC20222351020016C047 /* UIViewController+top.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+top.swift"; sourceTree = "<group>"; };
 		729F39AE222190D10090B5E4 /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		729F39B02221B4F00090B5E4 /* AlbumsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsFlow.swift; sourceTree = "<group>"; };
 		729F39B2222206090090B5E4 /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		09F9904F2220987000DB5B3E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				09F99050222098B500DB5B3E /* ViewStack.swift */,
+				7294BC20222351020016C047 /* UIViewController+top.swift */,
 				09F990522220A6A500DB5B3E /* Result.swift */,
 			);
 			path = Extensions;
@@ -541,6 +541,7 @@
 				729F39B12221B4F00090B5E4 /* AlbumsFlow.swift in Sources */,
 				09F9904E2220971200DB5B3E /* HasViewModel.swift in Sources */,
 				72DCB91A2217BB2A00C3F4D9 /* ActivityIndicator.swift in Sources */,
+				7294BC21222351020016C047 /* UIViewController+top.swift in Sources */,
 				72FDF94B22199A9300397F9F /* Photo.swift in Sources */,
 				72DCB91C2217BC4800C3F4D9 /* AsVoid.swift in Sources */,
 				09E7F540221DCFF500E69E9F /* SettingsTableViewController.swift in Sources */,
@@ -552,7 +553,6 @@
 				09E7F53D221DBDE100E69E9F /* User.swift in Sources */,
 				727CD459221E2D34009CB574 /* SettingsViewModel.swift in Sources */,
 				72FDF92C22185A5300397F9F /* PostDetailViewController.swift in Sources */,
-				09F99051222098B500DB5B3E /* ViewStack.swift in Sources */,
 				72FDF93B2219185200397F9F /* Album.swift in Sources */,
 				09E7F546221DD37D00E69E9F /* ProfileCoordinator.swift in Sources */,
 				72FDF9652219E01200397F9F /* TodoTableViewModel.swift in Sources */,

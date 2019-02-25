@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-func profileViewModel(user: Observable<User>) -> (_ inputs: ProfileInputs) -> (outputs: ProfileOutputs, action: Observable<ProfileAction>) {
+func profileViewModel(user: Observable<User>) -> (_ inputs: ProfileInputs) -> (outputs: ProfileOutputs, action: Observable<Void>) {
 	return { inputs in
 		let initials = user
 			.map { $0.initials }
@@ -19,9 +19,6 @@ func profileViewModel(user: Observable<User>) -> (_ inputs: ProfileInputs) -> (o
 		let username = user
 			.map { $0.username }
 
-		let action = inputs.settings
-			.map { ProfileAction() }
-
-		return (ProfileOutputs(initials: initials, name: name, username: username), action)
+		return (ProfileOutputs(initials: initials, name: name, username: username), inputs.settings)
 	}
 }

@@ -14,12 +14,14 @@ enum SettingsAction {
 	case logout
 }
 
-func settingsCoordinator(root: UIViewController, user: Observable<User>) {
+func settingsCoordinator(user: Observable<User>) {
 	let navigation = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as! UINavigationController
 	let settings = navigation.topViewController as! SettingsTableViewController
 	let action = settings.installOutputViewModel(outputFactory: settingsViewModel(user: user))
 		.share(replay: 1)
+	let root = UIViewController.top()
 
+	root.present(navigation, animated: false)
 	settings.title = "Settings"
 
 	let flow = action.flow(dismiss: { root.rxDismiss(animated: false) })
@@ -33,8 +35,6 @@ func settingsCoordinator(root: UIViewController, user: Observable<User>) {
 		.subscribe(onNext: {
 			UserDefaults.standard.set(nil, forKey: "user")
 		})
-
-	root.present(navigation, animated: true)
 }
 
 extension SettingsTableViewController: HasViewModel { }

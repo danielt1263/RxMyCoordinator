@@ -17,19 +17,17 @@ func postsCoordinator(root: UINavigationController, user: Observable<User>) {
 		.subscribe(onNext: { result in
 			switch result {
 			case .success(let post):
-				root.displayPostDetail(with: post)
+				showDetailPostDetail(with: post)
 			case .error(let error):
-				displayAlert(title: "Error", message: error.localizedDescription)
+				presentAlert(title: "Error", message: error.localizedDescription)
 			}
 		})
 }
 
-extension UIViewController {
-	func displayPostDetail(with post: Post) {
-		let controller = PostDetailViewController()
-		controller.post = post
-		self.showDetailViewController(controller, sender: nil)
-	}
+func showDetailPostDetail(with post: Post) {
+	let controller = PostDetailViewController()
+	controller.post = post
+	UIViewController.top().showDetailViewController(controller, sender: nil)
 }
 
 extension PostTableViewController: HasViewModel { }

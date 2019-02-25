@@ -9,15 +9,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-struct ProfileAction { }
-
 func profileCoordinator(root: UINavigationController, user: Observable<User>) {
 	let profile = root.topViewController as! ProfileViewController
 	let action = profile.installOutputViewModel(outputFactory: profileViewModel(user: user))
 
 	_ = action
-		.subscribe(onNext: { _ in
-			settingsCoordinator(root: root, user: user)
+		.subscribe(onNext: {
+			settingsCoordinator(user: user)
 		})
 }
 

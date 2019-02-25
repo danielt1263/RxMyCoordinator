@@ -41,6 +41,13 @@ func mainCoordinator(root: UIWindow) {
 		.filter { $0 }
 		.subscribe(onNext: { _ in
 			tabBarController.selectedIndex = 0
+			postNavigation.popToRootViewController(animated: false)
 			loginCoordinator()
 		})
+}
+
+func presentAlert(title: String?, message: String?) {
+	let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+	alert.addAction(UIAlertAction(title: "OK", style: .default))
+	UIViewController.top().present(alert, animated: true)
 }

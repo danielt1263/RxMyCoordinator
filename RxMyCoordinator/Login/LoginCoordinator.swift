@@ -11,27 +11,27 @@ import RxCocoa
 
 func loginCoordinator() {
 	let login = LoginViewController()
-	let loginAction = login.installOutputViewModel(outputFactory: loginViewModel(dataTask: dataTask(with:)))
+	let navigation = UINavigationController(rootViewController: login)
+	let action = login.installOutputViewModel(outputFactory: loginViewModel(dataTask: dataTask(with:)))
 		.share(replay: 1)
+	let root = UIViewController.top()
+	root.present(navigation, animated: false)
 
-	_ = loginAction.flow(pushSignup: pushSignupViewController)
+	_ = action.flow(pushSignup: showSignupViewController)
 		.subscribe(onNext: { result in
 			switch result {
 			case .success(let data):
 				UserDefaults.standard.set(data, forKey: "user")
-				topViewController().dismiss(animated: true)
+				root.dismiss(animated: true)
 			case .error(let error):
-				displayAlert(title: "Error", message: error.localizedDescription)
+				presentAlert(title: "Error", message: error.localizedDescription)
 			}
 		})
-
-	let navigation = UINavigationController(rootViewController: login)
-	topViewController().present(navigation, animated: false)
 }
 
-func pushSignupViewController() -> Observable<SignupAction> {
+func showSignupViewController() -> Observable<SignupAction> {
 	let controller = SignupViewController()
-	topNavigationController()!.pushViewController(controller, animated: true)
+	UIViewController.top().show(controller, sender: nil)
 	return controller.installOutputViewModel(outputFactory: signupViewModel(dataTask: dataTask(with:)))
 }
 

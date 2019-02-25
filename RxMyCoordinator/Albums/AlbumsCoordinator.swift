@@ -14,38 +14,30 @@ func albumsCoordinator(root: UINavigationController) {
 	let tableAction = albumTable.installOutputViewModel(outputFactory: albumTableViewModel(dataTask: dataTask(with:)))
 		.share(replay: 1)
 
-	func showPhotoCollection(with album: Album) -> Observable<Photo> {
-		let controller = UIStoryboard(name: "PhotoCollection", bundle: nil)
-			.instantiateInitialViewController() as! PhotoCollectionViewController
-		root.showDetailViewController(controller, sender: nil)
-		return controller.installOutputViewModel(outputFactory: photoCollectionViewModel(id: album.id, dataTask: dataTask(with:)))
-	}
-
-	_ = albumsFlow(showCollection: showPhotoCollection(with:), action: tableAction)
+	_ = albumsFlow(showCollection: showDetailPhotoCollection(with:), action: tableAction)
 		.subscribe(onNext: { result in
 			switch result {
 			case .success(let photo):
-				root.showPhotoDetail(with: photo)
+				showDetailPhotoDetail(with: photo)
 			case .error(let error):
-				displayAlert(title: "Error", message: error.localizedDescription)
+				presentAlert(title: "Error", message: error.localizedDescription)
 			}
 		})
 }
 
 extension AlbumTableViewController: HasViewModel { }
 
-extension UIViewController {
-	func showPhotoDetail(with photo: Photo) {
-		let controller = PhotoDetailViewController()
-		controller.photo = photo
-		self.showDetailViewController(controller, sender: nil)
-	}
+func showDetailPhotoCollection(with album: Album) -> Observable<Photo> {
+	let controller = UIStoryboard(name: "PhotoCollection", bundle: nil)
+		.instantiateInitialViewController() as! PhotoCollectionViewController
+	UIViewController.top().showDetailViewController(controller, sender: nil)
+	return controller.installOutputViewModel(outputFactory: photoCollectionViewModel(id: album.id, dataTask: dataTask(with:)))
 }
 
-func displayAlert(title: String?, message: String?) {
-	let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-	alert.addAction(UIAlertAction(title: "OK", style: .default))
-	topViewController().present(alert, animated: true)
+func showDetailPhotoDetail(with photo: Photo) {
+	let controller = PhotoDetailViewController()
+	controller.photo = photo
+	UIViewController.top().showDetailViewController(controller, sender: nil)
 }
 
 extension PhotoCollectionViewController: HasViewModel { }
