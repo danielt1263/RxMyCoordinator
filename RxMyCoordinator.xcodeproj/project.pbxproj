@@ -99,7 +99,6 @@
 		09F9904B2220458E00DB5B3E /* Disposable+insert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disposable+insert.swift"; sourceTree = "<group>"; };
 		09F9904D2220971200DB5B3E /* HasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasViewModel.swift; sourceTree = "<group>"; };
 		09F990522220A6A500DB5B3E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		38C055AE3EC38C497B076DA8 /* Pods-RxFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxFlow/Pods-RxFlow.release.xcconfig"; sourceTree = "<group>"; };
 		5944BF2FD92C46F048423598 /* Pods-RxMyCoordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMyCoordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxMyCoordinator/Pods-RxMyCoordinator.debug.xcconfig"; sourceTree = "<group>"; };
 		727CD458221E2D34009CB574 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		727CD45A221E32D3009CB574 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -139,8 +138,6 @@
 		72FDF9602219D46F00397F9F /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		72FDF9642219E01200397F9F /* TodoTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewModel.swift; sourceTree = "<group>"; };
 		72FDF9662219E31E00397F9F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		BEAB7FC175BA87C674F9C998 /* Pods-RxFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxFlow/Pods-RxFlow.debug.xcconfig"; sourceTree = "<group>"; };
-		D7EF388C9E1A5BF3D1681DC9 /* Pods_RxFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37D7B94283802FF69EAC0C2 /* Pods-RxMyCoordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMyCoordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxMyCoordinator/Pods-RxMyCoordinator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				0777BD47E5F3BA1124A49F1D /* Pods_RxMyCoordinator.framework */,
-				D7EF388C9E1A5BF3D1681DC9 /* Pods_RxFlow.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -395,8 +391,6 @@
 			children = (
 				5944BF2FD92C46F048423598 /* Pods-RxMyCoordinator.debug.xcconfig */,
 				E37D7B94283802FF69EAC0C2 /* Pods-RxMyCoordinator.release.xcconfig */,
-				BEAB7FC175BA87C674F9C998 /* Pods-RxFlow.debug.xcconfig */,
-				38C055AE3EC38C497B076DA8 /* Pods-RxFlow.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
