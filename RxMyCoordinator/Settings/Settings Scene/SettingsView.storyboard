@@ -137,7 +137,7 @@
                             <outlet property="delegate" destination="cts-ax-Pz0" id="Yk5-Zf-y1B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="5IL-lY-z60">
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="5IL-lY-z60">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="bIR-H9-McM"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

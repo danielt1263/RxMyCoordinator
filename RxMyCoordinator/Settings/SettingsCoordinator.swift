@@ -20,11 +20,9 @@ func settingsCoordinator(user: Observable<User>) {
 	let action = settings.installOutputViewModel(outputFactory: settingsViewModel(user: user))
 		.share(replay: 1)
 	let root = UIViewController.top()
-
-	root.present(navigation, animated: false)
-	settings.title = "Settings"
-
 	let flow = action.flow(dismiss: { root.rxDismiss(animated: false) })
+
+	root.present(navigation, animated: true)
 
 	_ = flow.dismiss
 		.subscribe(onNext: {
