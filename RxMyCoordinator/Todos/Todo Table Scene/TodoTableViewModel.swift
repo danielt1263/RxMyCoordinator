@@ -24,7 +24,7 @@ func todoTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<Da
 			.map { try JSONDecoder().decode([Todo].self, from: $0) }
 
 		let refreshEnded = response
-			.delay(0.5, scheduler: MainScheduler.instance)
+			.delay(.milliseconds(500), scheduler: MainScheduler.instance)
 			.asVoid()
 
 		let selected = inputs.select

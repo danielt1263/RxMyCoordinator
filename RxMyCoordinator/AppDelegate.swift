@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 		mainCoordinator(root: window!)
 
 		#if DEBUG
-		_ = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+		_ = Observable<Int>.interval(.milliseconds(1000), scheduler: MainScheduler.instance)
 			.map { _ in RxSwift.Resources.total }
 			.distinctUntilChanged()
 			.subscribe(onNext: { print("Resource count \($0)") })

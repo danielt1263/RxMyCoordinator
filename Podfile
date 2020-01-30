@@ -1,6 +1,6 @@
 project 'RxMyCoordinator.xcodeproj'
 
-platform :ios, '9.3'
+platform :ios, '11.4'
 
 target 'RxMyCoordinator' do
   use_frameworks!

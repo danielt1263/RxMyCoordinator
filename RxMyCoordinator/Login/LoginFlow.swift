@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-extension ObservableType where E == LoginAction {
+extension ObservableType where Element == LoginAction {
 	func flow(pushSignup: @escaping () -> Observable<SignupAction>) -> Observable<Result<Data>> {
 		let signupAction = self
 			.filter { $0.isWantsSignup }
@@ -55,4 +55,3 @@ extension LoginAction {
 		else { return nil }
 	}
 }
-

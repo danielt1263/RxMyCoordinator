@@ -18,10 +18,6 @@ class LoginViewController: UIViewController {
 
 	var viewModelFactory: (LoginInputs) -> Void = { _ in fatalError("Missing view model factory.") }
 
-	deinit {
-		print("LoginViewController deinit")
-	}
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 

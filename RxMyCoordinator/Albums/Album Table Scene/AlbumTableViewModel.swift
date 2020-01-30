@@ -10,9 +10,7 @@ import RxSwift
 
 typealias AlbumTableAction = Result<Album>
 
-func albumTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<Data>>)
-	-> (_ inputs: AlbumTableInputs)
-	-> (outputs: AlbumTableOutputs, action: Observable<AlbumTableAction>) {
+func albumTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<Data>>) -> (_ inputs: AlbumTableInputs) -> (outputs: AlbumTableOutputs, action: Observable<AlbumTableAction>) {
 	return { inputs in
 		let load = Observable.merge(inputs.viewWillAppear, inputs.refresh)
 		let response = load
@@ -26,7 +24,7 @@ func albumTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<D
 			.map { try JSONDecoder().decode([Album].self, from: $0) }
 
 		let refreshEnded = response
-			.delay(0.5, scheduler: MainScheduler.instance)
+			.delay(.milliseconds(500), scheduler: MainScheduler.instance)
 			.asVoid()
 
 		let selected = inputs.select
@@ -43,5 +41,3 @@ func albumTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<D
 		return (AlbumTableOutputs(albums: albums, refreshEnded: refreshEnded), action)
 	}
 }
-
-

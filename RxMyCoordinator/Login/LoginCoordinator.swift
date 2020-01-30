@@ -12,6 +12,7 @@ import RxCocoa
 func loginCoordinator() {
 	let login = LoginViewController()
 	let navigation = UINavigationController(rootViewController: login)
+	navigation.modalPresentationStyle = .fullScreen
 	let action = login.installOutputViewModel(outputFactory: loginViewModel(dataTask: dataTask(with:)))
 		.share(replay: 1)
 	let root = UIViewController.top()
