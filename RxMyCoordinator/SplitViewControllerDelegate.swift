@@ -17,8 +17,7 @@ class SplitViewControllerDelegate: NSObject, UISplitViewControllerDelegate {
 	func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
 		let tabBar = primaryViewController as! UITabBarController
 		let secondary = secondaryViewController as! UINavigationController
-		let active = tabBar.selectedViewController as! UINavigationController
-		if secondary.children.last?.restorationIdentifier != "placeholder" {
+		if let active = tabBar.selectedViewController as? UINavigationController, secondary.children.last?.restorationIdentifier != "placeholder" {
 			active.viewControllers += secondary.viewControllers
 			active.topViewController!.navigationItem.leftBarButtonItem = nil
 		}
