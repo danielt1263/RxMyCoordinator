@@ -19,8 +19,7 @@ func todoTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<Da
 			.share(replay: 1)
 
 		let todos = response
-			.map { $0.success }
-			.unwrap()
+			.compactMap { $0.success }
 			.map { try JSONDecoder().decode([Todo].self, from: $0) }
 
 		let refreshEnded = response
@@ -32,8 +31,7 @@ func todoTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<Da
 			.map { TodoAction.success($0) }
 
 		let error = response
-			.map { $0.error }
-			.unwrap()
+			.compactMap { $0.error }
 			.map { TodoAction.error($0) }
 
 		let action = Observable.merge(selected, error)

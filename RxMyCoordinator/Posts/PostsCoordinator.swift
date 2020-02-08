@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-func postsCoordinator(root: UINavigationController, user: Observable<User>) {
+func postsCoordinator(root: UINavigationController, user: Observable<User?>) {
 	let postTable = root.topViewController as! PostTableViewController
 	let postAction = postTable.installOutputViewModel(outputFactory: postTableViewModel(user: user, dataTask: dataTask(with:)))
 
@@ -26,8 +26,15 @@ func postsCoordinator(root: UINavigationController, user: Observable<User>) {
 
 func showDetailPostDetail(with post: Post) {
 	let controller = PostDetailViewController()
-	controller.post = post
+	controller.post = PostDetailDisplay(post)
 	UIViewController.top().showDetailViewController(controller, sender: nil)
 }
 
 extension PostTableViewController: HasViewModel { }
+
+extension PostDetailDisplay {
+	init(_ post: Post) {
+		title = post.title
+		body = post.body
+	}
+}

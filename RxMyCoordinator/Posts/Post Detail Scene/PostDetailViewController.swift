@@ -12,7 +12,7 @@ class PostDetailViewController: UIViewController {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var bodyLabel: UILabel!
 
-	var post: Post!
+	var post: PostDetailDisplay!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,4 +20,9 @@ class PostDetailViewController: UIViewController {
 		titleLabel.text = post.title
 		bodyLabel.text = post.body
 	}
+}
+
+struct PostDetailDisplay {
+	let title: String
+	let body: String
 }

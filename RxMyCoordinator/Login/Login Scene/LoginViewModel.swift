@@ -34,12 +34,10 @@ func loginViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<Data>>
 		let user = response
 			.map { $0.map { try JSONDecoder().decode(User.self, from: $0) } }
 			.map { $0.map { LoginAction.loginSuccess($0) } }
-			.map { $0.success }
-			.unwrap()
+			.compactMap { $0.success }
 
 		let error = response
-			.map { $0.error }
-			.unwrap()
+			.compactMap { $0.error }
 			.map { LoginAction.error($0) }
 
 		let wantsSignup = inputs.signup

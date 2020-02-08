@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RxSwift
 
 func photoDetailViewModel(photoURL: URL) -> PhotoDetailOutputs {
 	let result = dataTask(with: URLRequest(url: photoURL))
@@ -14,8 +13,7 @@ func photoDetailViewModel(photoURL: URL) -> PhotoDetailOutputs {
 
 	let image = result
 		.map { $0.map { UIImage(data: $0) ?? #imageLiteral(resourceName: "EmptyViewBackground") } }
-		.map { $0.catchErrorJustReturn(#imageLiteral(resourceName: "EmptyViewBackground")) }
-		.unwrap()
+		.compactMap { $0.catchErrorJustReturn(#imageLiteral(resourceName: "EmptyViewBackground")) }
 
 	let activity = result
 		.map { _ in false }

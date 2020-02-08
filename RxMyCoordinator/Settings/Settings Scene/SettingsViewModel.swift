@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-func settingsViewModel(user: Observable<User>) -> (_ inputs: SettingsInputs) -> (outputs: SettingsOutputs, action: Observable<SettingsAction>) {
+func settingsViewModel(user: Observable<User?>) -> (_ inputs: SettingsInputs) -> (outputs: SettingsOutputs, action: Observable<SettingsAction>) {
 	return { inputs in
 		let done = inputs.done
 			.map { SettingsAction.done }
@@ -17,7 +17,7 @@ func settingsViewModel(user: Observable<User>) -> (_ inputs: SettingsInputs) -> 
 			.map { SettingsAction.logout }
 
 		let logoutText = user
-			.map { "Logout \($0.username)" }
+			.map { $0.map { "Logout \($0.username)" } ?? "Logout ..." }
 
 		let action = Observable.merge(done, logout)
 

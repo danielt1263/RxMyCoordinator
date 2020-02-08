@@ -10,19 +10,22 @@ import RxSwift
 
 typealias PostAction = Result<Post>
 
-func postTableViewModel(user: Observable<User>, dataTask: @escaping (URLRequest) -> Observable<Result<Data>>) -> (_ inputs: PostTableInputs) -> (outputs: PostTableOutputs, action: Observable<PostAction>) {
+func postTableViewModel(user: Observable<User?>, dataTask: @escaping (URLRequest) -> Observable<Result<Data>>) -> (_ inputs: PostTableInputs) -> (outputs: PostTableOutputs, action: Observable<PostAction>) {
 	return { inputs in
 		let load = Observable.merge(inputs.viewWillAppear, inputs.refresh)
 		let response = load
 			.withLatestFrom(user)
-			.map { URLRequest.getPosts(id: $0.id) }
+			.compactMap { $0.map { URLRequest.getPosts(id: $0.id) } }
 			.flatMapLatest { dataTask($0) }
 			.share(replay: 1)
 
 		let posts = response
-			.map { $0.success }
-			.unwrap()
+			.compactMap { $0.success }
 			.map { try JSONDecoder().decode([Post].self, from: $0) }
+			.share(replay: 1)
+
+		let postDisplays = posts
+			.map { $0.map(PostDisplay.init) }
 
 		let refreshEnded = response
 			.delay(.milliseconds(500), scheduler: MainScheduler.instance)
@@ -33,12 +36,18 @@ func postTableViewModel(user: Observable<User>, dataTask: @escaping (URLRequest)
 			.map { PostAction.success($0) }
 
 		let error = response
-			.map { $0.error }
-			.unwrap()
+			.compactMap { $0.error }
 			.map { PostAction.error($0) }
 
 		let action = Observable.merge(selected, error)
 
-		return (PostTableOutputs(posts: posts, refreshEnded: refreshEnded), action)
+		return (PostTableOutputs(postDisplays: postDisplays, refreshEnded: refreshEnded), action)
+	}
+}
+
+extension PostDisplay {
+	init(_ post: Post) {
+		title = post.title
+		body = post.body
 	}
 }

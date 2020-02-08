@@ -19,17 +19,14 @@ func mainCoordinator(root: UIWindow) {
 
 	let user = UserDefaults.standard.rx.observe(Data.self, "user")
 		.map { data in
-			Result {
-				try data.map { try JSONDecoder().decode(User.self, from: $0) }
-			}
+			try? data.map { try JSONDecoder().decode(User.self, from: $0) }
 		}
-		.map { $0.catchErrorJustReturn(nil) }
 		.share(replay: 1)
 
-	postsCoordinator(root: postNavigation, user: user.unwrap())
+	postsCoordinator(root: postNavigation, user: user)
 	albumsCoordinator(root: albumNavigation)
 	todoCoordinator(root: todoNavigation)
-	profileCoordinator(root: profileNavigation, user: user.unwrap())
+	profileCoordinator(root: profileNavigation, user: user)
 
 	let appAppeared = splitViewController.rx.methodInvoked(#selector(UIViewController.viewDidAppear(_:)))
 		.asVoid()

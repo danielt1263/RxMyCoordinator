@@ -8,7 +8,6 @@ target 'RxMyCoordinator' do
   
   pod 'RxCocoa'
   pod 'RxSwift'
-  pod 'RxSwiftExt'
 
 end
 

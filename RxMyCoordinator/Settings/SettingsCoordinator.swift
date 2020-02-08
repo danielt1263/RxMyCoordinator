@@ -14,7 +14,7 @@ enum SettingsAction {
 	case logout
 }
 
-func settingsCoordinator(user: Observable<User>) {
+func settingsCoordinator(user: Observable<User?>) {
 	let navigation = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as! UINavigationController
 	let settings = navigation.topViewController as! SettingsTableViewController
 	let action = settings.installOutputViewModel(outputFactory: settingsViewModel(user: user))

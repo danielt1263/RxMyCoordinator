@@ -16,8 +16,7 @@ func photoCollectionViewModel(id: Int, dataTask: @escaping (URLRequest) -> Obser
 			.share(replay: 1)
 
 		let photos = response
-			.map { $0.success }
-			.unwrap()
+			.compactMap { $0.success }
 			.map { try JSONDecoder().decode([Photo].self, from: $0) }
 
 		let action = inputs.selected

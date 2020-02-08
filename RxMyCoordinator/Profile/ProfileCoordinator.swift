@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-func profileCoordinator(root: UINavigationController, user: Observable<User>) {
+func profileCoordinator(root: UINavigationController, user: Observable<User?>) {
 	let profile = root.topViewController as! ProfileViewController
 	let action = profile.installOutputViewModel(outputFactory: profileViewModel(user: user))
 

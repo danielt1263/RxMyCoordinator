@@ -25,14 +25,12 @@ func signupViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<Data>
 			.share(replay: 1)
 
 		let user = response
-			.map { $0.success }
-			.unwrap()
+			.compactMap { $0.success }
 			.map { try JSONDecoder().decode(User.self, from: $0) }
 			.map { SignupAction.success($0) }
 
 		let error = response
-			.map { $0.error }
-			.unwrap()
+			.compactMap { $0.error }
 			.map { SignupAction.error($0) }
 
 		return ((), Observable.merge(user, error))

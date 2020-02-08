@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxSwiftExt
 
 class PostTableViewController: UITableViewController {
 
@@ -36,7 +35,7 @@ class PostTableViewController: UITableViewController {
 			}
 			.disposed(by: bag)
 
-		viewModel.posts
+		viewModel.postDisplays
 			.bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { _, item, cell in
 				cell.textLabel!.text = item.title
 				cell.detailTextLabel!.text = item.body
@@ -52,8 +51,12 @@ struct PostTableInputs {
 }
 
 struct PostTableOutputs {
-	let posts: Observable<[Post]>
+	let postDisplays: Observable<[PostDisplay]>
 	let refreshEnded: Observable<Void>
 }
 
+struct PostDisplay {
+	let title: String
+	let body: String
+}
 

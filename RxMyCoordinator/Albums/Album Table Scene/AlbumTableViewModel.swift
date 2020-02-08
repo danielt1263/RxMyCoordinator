@@ -19,8 +19,7 @@ func albumTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<D
 			.share(replay: 1)
 
 		let albums = response
-			.map { $0.success }
-			.unwrap()
+			.compactMap { $0.success }
 			.map { try JSONDecoder().decode([Album].self, from: $0) }
 
 		let refreshEnded = response
@@ -32,8 +31,7 @@ func albumTableViewModel(dataTask: @escaping (URLRequest) -> Observable<Result<D
 			.map { AlbumTableAction.success($0) }
 
 		let error = response
-			.map { $0.error }
-			.unwrap()
+			.compactMap { $0.error }
 			.map { AlbumTableAction.error($0) }
 
 		let action = Observable.merge(selected, error)
