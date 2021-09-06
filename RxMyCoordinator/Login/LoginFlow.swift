@@ -24,7 +24,7 @@ extension ObservableType where Element == LoginAction {
 				userResult
 					.map { try JSONEncoder().encode($0) }
 			}
-			.observeOn(MainScheduler.instance)
+			.observe(on: MainScheduler.instance)
 	}
 }
 

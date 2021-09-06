@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-protocol HasViewModel: class {
+protocol HasViewModel: AnyObject {
 	associatedtype Inputs
 	associatedtype Outputs
 	var viewModelFactory: (Inputs) -> Outputs { get set }
